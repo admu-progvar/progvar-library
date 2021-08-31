@@ -3,16 +3,19 @@ A collection of algorithms, data structures and other useful information for com
 
 ---
 
+### Prerequisites
+LaTeX
+- Install latex with `sudo apt install texlive-full` (warning: this could take up 5 Gb of space)
+- Install `Pygments` with `pip3 install Pygments` or `pip install Pygments`
 
 ### How to contribute:
-- clone this repository using `git clone https://github.com/leloykun/admu-progvar-notebook.git`
-- add codes to the folder `/code` and edit `notebook.tex`
-- install latex with `sudo apt install texlive-full` (warning: this could take up 5Gb of space)
-- install `Pygments` with `pip3 install Pygments` or `pip install Pygments`
-- run `notebook/makefile.sh`
-- submit a pull request
-- ...
-- profit
+- Clone this repository using `git clone https://github.com/leloykun/admu-progvar-notebook.git`
+- Create a new branch using `git checkout -b [add your 2-letter initials here]--[branch code]`. For example `git checkout -b fc--edit-readme`
+- Add codes to the folder `/src` and edit `notebook.tex`
+- Run `notebook/makefile.sh` to generate the notebook
+- Submit a pull request
+- Tag someone to review your code
+- Merge your PR only after receiving at least 1 approval from a reviewer
 
 ### (sub)(sub)Section Syntax:
 - <span style="color:red">Red</span>: copy-pasted / non-tested code
