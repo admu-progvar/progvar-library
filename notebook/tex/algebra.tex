@@ -1,0 +1,42 @@
+\section{Math I - Algebra}
+  \subsection{Generating Function Manager}
+    \code{math/algebra/generating_function_manager.cpp}
+  \subsection{Fast Fourier Transform}
+    Compute the Discrete Fourier Transform (DFT) of a polynomial in $O(n \log n)$ time.
+    \code{math/algebra/fft.cpp}
+  \subsection{FFT Polynomial Multiplication}
+    Multiply integer polynomials $a, b$ of size $an, bn$ using FFT in $O(n \log n)$. Stores answer in an array $c$, rounded to the nearest integer (or double).
+    \code{math/algebra/fft-poly-mul.cpp}
+  \subsection{Number Theoretic Transform}
+    Other possible moduli: $2 113 929 217 (2^{25}), 2 013 265 920 268 435 457 (2^{28}, with g = 5)$
+    \code{math/algebra/ntt.cpp}
+  \subsection{Polynomial Long Division}
+    Divide two polynomials $A$ and $B$ to get $Q$ and $R$, where $\frac{A}{B} = Q + \frac{R}{B}$.
+    \code{math/algebra/poly-long-div.cpp}
+  \subsection{Matrix Multiplication}
+    Multiplies matrices $A_{p\times q}$ and $B_{q\times r}$ in $O(n^3)$ time, modulo \texttt{MOD}.
+    \code{math/algebra/matmul.java}
+  \subsection{Matrix Power}
+    Computes for $B^e$ in $O(n^3 \log e)$ time. Refer to Matrix Multiplication.
+    \code{math/algebra/matpow.java}
+  \subsection{Fibonacci Matrix}
+    Fast computation for $n$th Fibonacci $\left\{F_1,F_2,\ldots,F_n \right\}$ in $O(\log n)$:
+    \[
+    \begin{bmatrix}
+        F_n \\
+        F_{n-1}
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+        1 & 1 \\
+        1 & 0
+    \end{bmatrix}^n
+    \times
+    \begin{bmatrix}
+        F_2 \\
+        F_1
+    \end{bmatrix}
+    \]
+  \subsection{Gauss-Jordan/Matrix Determinant}
+    Row reduce matrix $A$ in $O(n^3)$ time. Returns \texttt{true} if a solution exists.
+    \code{math/algebra/gauss-jordan.java}

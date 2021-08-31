@@ -1,0 +1,105 @@
+\section{Geometry}
+  \code{geom/compgeom.cpp}
+	\subsection{Dots and Cross Products}
+    \code{geom/dot-cross.cpp}
+  \subsection{Angles and Rotations}
+    \code{geom/angles-rots.cpp}
+	\subsection{Spherical Coordinates}
+    \[
+        \begin{array}{cc}
+            x = r \cos \theta \cos \phi & r = \sqrt{x^2 + y^2 + z^2} \\
+            y = r \cos \theta \sin \phi & \theta = \cos^{-1} x/r \\
+            z = r \sin \theta & \phi = \mathrm{atan2}(y,x)
+        \end{array}
+    \]
+	\subsection{Point Projection}
+    \code{geom/pt-proj.cpp}
+	\subsection{Great Circle Distance}
+    \code{geom/great-circle.cpp}
+	\subsection{Point/Line/Plane Distances}
+    \code{geom/dists.cpp}
+	\subsection{Intersections}
+    \subsubsection{Line-Segment Intersection}
+      Get intersection points of 2D lines/segments $\overline{ab}$ and $\overline{cd}$.
+      \code{geom/line-seg-isect.cpp}
+    \subsubsection{Circle-Line Intersection}
+      Get intersection points of circle at center $c$, radius $r$, and line $\overline{ab}$.
+      \code{geom/circ-line-isect.cpp}
+    \subsubsection{Circle-Circle Intersection}
+      \code{geom/circ-circ-isect.cpp}
+	\subsection{Polygon Areas}
+    Find the area of any 2D polygon given as points in $O(n)$.
+    \code{geom/poly-area.cpp}
+    \subsubsection{Triangle Area}
+      Find the area of a triangle using only their lengths. Lengths must be valid.
+      \code{geom/tri-area.cpp}
+    \subsubsection*{Cyclic Quadrilateral Area}
+      Find the area of a cyclic quadrilateral using only their lengths. A quadrilateral is
+      cyclic if its inner angles sum up to $360^\circ$.
+      \code{geom/cyc-quad-area.cpp}
+  \subsection{Polygon Centroid}
+    Get the centroid/center of mass of a polygon in $O(m)$.
+    \code{geom/poly-centroid.cpp}
+  \subsection{Convex Hull}
+    \subsubsection{2D Convex Hull}
+      Get the convex hull of a set of points using Graham-Andrew's scan. This sorts the
+      points at $O(n \log n)$, then performs the Monotonic Chain Algorithm at $O(n)$.
+      \code{geom/convex-hull.cpp}
+    \subsubsectionRed{3D Convex Hull}
+      Currently $O(N^2)$, but can be optimized to a randomized $O(N\log{N})$ using the Clarkson-Shor algorithm.
+      Sauce: \href{https://codeforces.com/blog/entry/81768}{Efficient 3D Convex Hull Tutorial on CF}.
+      \code{geom/convex-hull-3d.cpp}
+  \subsectionRed{Delaunay Triangulation}
+    Simply map each point $(x,y)$ to $(x,y,x^2+y^2)$, find the 3d convex hull, and drop the 3rd dimension.
+  \subsection{Point in Polygon}
+    Check if a point is strictly inside (or on the border) of a polygon in $O(n)$.
+    \code{geom/pt-in-poly.cpp}
+  \subsection{Cut Polygon by a Line}
+    Cut polygon by line $\overline{ab}$ to its left in $O(n)$, such that $\angle abp$ is counter-clockwise.
+    \code{geom/cut-poly.cpp}
+  \subsection{Triangle Centers}
+    \code{geom/tri-centers.cpp}
+  \subsection{Convex Polygon Intersection}
+    Get the intersection of two convex polygons in $O(n^2)$.
+    \code{geom/convex-poly-isect.cpp}
+  \subsection{Pick's Theorem for Lattice Points}
+    Count points with integer coordinates inside and on the boundary of a polygon in
+    $O(n)$ using Pick's theorem: $\text{Area} = I + B/2 - 1$.
+    \code{geom/picks.cpp}
+  \subsection{Minimum Enclosing Circle}
+    Get the minimum bounding ball that encloses a set of points (2D or 3D) in $\Theta{n}$.
+    \code{geom/min-enclosing-circ.cpp}
+  \subsection{Shamos Algorithm}
+    Solve for the polygon diameter in $O(n \log n)$.
+    \code{geom/shamos.cpp}
+  \subsection{$k$D Tree}
+    Get the $k$-nearest neighbors of a point within pruned radius in $O(k \log k \log n)$.
+    \code{geom/kd-tree.cpp}
+  \subsection{Line Sweep (Closest Pair)}
+    Get the closest pair distance of a set of points in $O(n \log n)$ by sweeping a line and
+    keeping a bounded rectangle. Modifiable for other metrics such as Minkowski and
+    Manhattan distance. For external point queries, see $k$D Tree.
+    \code{geom/closest-pair.cpp}
+  \subsection{Line upper/lower envelope}
+    To find the upper/lower envelope of a collection of lines $a_i+b_i x$,
+    plot the points $(b_i,a_i)$, add the point $(0,\pm \infty)$ (depending
+    on if upper/lower envelope is desired), and then find the convex hull.
+  \subsection{Formulas}
+    Let $a = (a_x, a_y)$ and $b = (b_x, b_y)$ be two-dimensional vectors.
+    \begin{itemize}
+      \item $a\cdot b = |a||b|\cos{\theta}$, where $\theta$ is the angle
+        between $a$ and $b$.
+      \item $a\times b = |a||b|\sin{\theta}$, where $\theta$ is the
+        signed angle between $a$ and $b$.
+      \item $a\times b$ is equal to the area of the parallelogram with
+        two of its sides formed by $a$ and $b$. Half of that is the
+        area of the triangle formed by $a$ and $b$.
+      \item The line going through $a$ and $b$ is $Ax+By=C$ where $A=b_y-a_y$, $B=a_x-b_x$, $C=Aa_x+Ba_y$.
+      \item Two lines $A_1x+B_1y=C_1$, $A_2x+B_2y=C_2$ are parallel iff.\ $D=A_1B_2-A_2B_1$ is zero. Otherwise their unique intersection is $(B_2C_1-B_1C_2,A_1C_2-A_2C_1)/D$.
+      \item \textbf{Euler's formula:} $V - E + F = 2$
+      \item Side lengths $a,b,c$ can form a triangle iff.\ $a+b>c$, $b+c>a$ and $a+c>b$.
+      \item Sum of internal angles of a regular convex $n$-gon is $(n-2)\pi$.
+      \item \textbf{Law of sines:} $\frac{a}{\sin A} = \frac{b}{\sin B} = \frac{c}{\sin C}$
+      \item \textbf{Law of cosines:} $b^2 = a^2 + c^2 - 2ac\cos B$
+      \item Internal tangents of circles $(c_1,r_1), (c_2,r_2)$ intersect at $(c_1r_2+c_2r_1)/(r_1+r_2)$, external intersect at $(c_1r_2-c_2r_1)/(r_1+r_2)$.
+    \end{itemize}

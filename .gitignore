@@ -1,0 +1,46 @@
+# Compiled Object files
+*.slo
+*.lo
+*.o
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+
+# Executables
+*.exe
+
+# LaTeX
+*.aux
+*.log
+*.out
+*.pyg
+*.toc
+*.fdb_latexmk
+*.fls
+*.dvi
+
+# Other
+/notebook/reference/*
+/notebook/_code
+/notebook/_minted-notebook
+/notebook/_minted-notebook-trunc
+/notebook/notebook.synctex.gz
+/notebook/codelib
+
+/docs/_posts
+/docs/_site
+/docs/.gitignore
+/docs/404.html
+/docs/about.markdown
+/docs/Gemfile
+/docs/Gemfile.lock
+/docs/index.markdown
+
+/notebook/_docs
+/notebook/_tex

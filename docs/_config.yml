@@ -1,0 +1,5 @@
+theme: jekyll-theme-cayman
+show_notebook_downloads: True
+notebook:
+  full_pdf: https://github.com/leloykun/admu-progvar-notebook/releases/download/v1.0-alpha/notebook.pdf
+  trunc_pdf: https://github.com/leloykun/admu-progvar-notebook/releases/download/v1.0-alpha/notebook-trunc.pdf

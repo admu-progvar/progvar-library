@@ -1,0 +1,151 @@
+\section{Graphs}
+\begin{comment}
+	Using adjacency list:
+	\code{graphs/graph_template_adjlist.cpp}
+	Using adjacency matrix:
+	\code{graphs/graph_template_adjmat.cpp}
+	Using edge list:
+	\code{graphs/graph_template_edgelist.cpp}
+\end{comment}
+	\subsection{Single-Source Shortest Paths}
+		\subsubsection{Dijkstra}
+			\code{graphs/shortest_paths/dijkstra.cpp}
+		\subsubsection{Bellman-Ford}
+			\code{graphs/shortest_paths/bellman_ford.cpp}
+    \subsubsection{Shortest Path Faster Algorithm}
+      \code{graphs/shortest_paths/spfa.cpp}
+	\subsection{All-Pairs Shortest Paths}
+		\subsubsection{Floyd-Washall}
+			\code{graphs/shortest_paths/floyd_warshall.cpp}
+	\subsection{Strongly Connected Components}
+		\subsubsection{Kosaraju}
+      \code{graphs/scc/kosaraju.cpp}
+    \subsubsectionRed{Tarjan's Offline Algorithm}
+      \code{graphs/scc/tarjan.cpp}
+  \subsectionRed{Minimum Mean Weight Cycle}
+    Run this for each strongly connected component
+    \code{graphs/min_mean_cycle.cpp}
+	\subsection{Biconnected Components}
+	  \subsubsection{Bridges and Articulation Points}
+      \code{graphs/bcc/bridges_artics.cpp}
+    \subsubsection{Block Cut Tree}
+      \code{graphs/bcc/block_cut_tree.cpp}
+		\subsubsection{Bridge Tree}
+      \code{graphs/bcc/bridge_tree.cpp}
+	\subsection{Minimum Spanning Tree}
+		\subsubsection{Kruskal}
+      \code{graphs/mst/kruskal.cpp}
+		\subsubsection{Prim}
+      \code{graphs/mst/prim.cpp}
+	\subsectionRed{Euler Path/Cycle}
+    \subsubsectionRed{Euler Path/Cycle in a Directed Graph}
+      \code{graphs/euler_path.cpp}
+    \subsubsectionRed{Euler Path/Cycle in an Undirected Graph}
+      \code{graphs/euler_path_undirected.cpp}
+	\subsectionRed{Bipartite Matching}
+		\subsubsectionRed{Alternating Paths Algorithm}
+      \code{graphs/bipartite_matching/bipartite_matching.cpp}
+		\subsubsectionRed{Hopcroft-Karp Algorithm}
+      \code{graphs/bipartite_matching/hopcroft_karp.cpp}
+    \subsubsectionRed{Minimum Vertex Cover in Bipartite Graphs}
+      \code{graphs/bipartite_matching/bipartite_mvc.cpp}
+	\subsection{Maximum Flow}
+		\subsubsection{Edmonds-Karp} $O(VE^2)$
+			\code{graphs/max_flow/edmonds_karp.cpp}
+		\subsubsection{Dinic}
+			$O(V^2E)$
+			\code{graphs/max_flow/dinic.cpp}
+		\subsubsection{Push-relabel}
+			$\omega(VE+V^2\sqrt{E})$, $O(V^3)$
+			\code{graphs/max_flow/push_relabel.cpp}
+    \subsubsectionRed{Gomory-Hu (All-pairs Maximum Flow)}
+      \code{graphs/max_flow/gomory_hu_tree.cpp}
+  \subsection{Minimum Cost Maximum Flow}
+    \code{graphs/max_flow/mcst.cpp}
+    \subsubsection{Hungarian Algorithm}
+      \code{graphs/max_flow/hungarian.cpp}
+  \subsectionRed{Minimum Arborescence}
+    Given a weighted directed graph, finds a subset of edges of minimum
+    total weight so that there is a unique path from the root $r$ to each
+    vertex. Returns a vector of size $n$, where the $i$th element is the
+    edge for the $i$th vertex. The answer for the root is undefined!
+    \code{graphs/arborescence.cpp}
+  \subsectionRed{Blossom algorithm}
+    Finds a maximum matching in an arbitrary graph in $O(|V|^4)$ time. Be
+    vary of loop edges.
+    \code{graphs/blossom.cpp}
+  \subsection{Maximum Density Subgraph}
+    Given (weighted) undirected graph $G$. Binary search density. If $g$ is
+    current density, construct flow network: $(S, u, m)$, $(u, T,
+    m+2g-d_u)$, $(u,v,1)$, where $m$ is a large constant (larger than sum
+    of edge weights). Run floating-point max-flow. If minimum cut has empty
+    $S$-component, then maximum density is smaller than $g$, otherwise it's
+    larger. Distance between valid densities is at least $1/(n(n-1))$. Edge
+    case when density is $0$. This also works for weighted graphs by
+    replacing $d_u$ by the weighted degree, and doing more iterations (if
+    weights are not integers).
+  \subsection{Maximum-Weight Closure}
+    Given a vertex-weighted directed graph $G$. Turn the graph into a flow
+    network, adding weight $\infty$ to each edge. Add vertices $S,T$. For
+    each vertex $v$ of weight $w$, add edge $(S,v,w)$ if $w\geq 0$, or edge
+    $(v,T,-w)$ if $w<0$. Sum of positive weights minus minimum $S-T$ cut is
+    the answer. Vertices reachable from $S$ are in the closure. The
+    maximum-weight closure is the same as the complement of the
+    minimum-weight closure on the graph with edges reversed.
+  \subsection{Maximum Weighted Ind. Set in a Bipartite Graph}
+    This is the same as the minimum weighted vertex cover. Solve this by
+    constructing a flow network with edges $(S,u,w(u))$ for $u\in L$,
+    $(v,T,w(v))$ for $v\in R$ and $(u,v,\infty)$ for $(u,v)\in E$. The
+    minimum $S,T$-cut is the answer. Vertices adjacent to a cut edge are
+    in the vertex cover.
+  \subsection{Synchronizing word problem}
+    A DFA has a synchronizing word (an input sequence that moves all states
+    to the same state) iff.\ each pair of states has a synchronizing word.
+    That can be checked using reverse DFS over pairs of states. Finding the
+    shortest synchronizing word is NP-complete.
+  \subsection{Max flow with lower bounds on edges}
+    % TODO: Test this!
+    Change edge $(u,v,l\leq f\leq c)$ to $(u,v,f\leq c-l)$. Add edge
+    $(t,s,\infty)$. Create super-nodes $S$, $T$. Let $M(u) = \sum_{v}
+    l(v,u) - \sum_{v} l(u,v)$. If $M(u)<0$, add edge $(u,T,-M(u))$, else
+    add edge $(S,u,M(u))$. Max flow from $S$ to $T$. If all edges from $S$
+    are saturated, then we have a feasible flow. Continue running max flow
+    from $s$ to $t$ in original graph.
+    % TODO: Was there something similar for vertex capacities that we should add?
+  \subsection{Tutte matrix for general matching}
+    Create an $n\times n$ matrix $A$. For each edge $(i,j)$, $i<j$, let
+    $A_{ij} = x_{ij}$ and $A_{ji} = -x_{ij}$. All other entries are $0$.
+    The determinant of $A$ is zero iff.\ the graph has a perfect matching.
+    A randomized algorithm uses the Schwartz--Zippel lemma to check if it is
+    zero.
+  \subsection{Heavy Light Decomposition}
+    \code{graphs/heavy_light_decomposition.cpp}
+	\subsectionRed{Centroid Decomposition}
+    \code{graphs/centroid_decomposition.cpp}
+	\subsection{Least Common Ancestor}
+		\subsubsection{Binary Lifting}
+      \code{graphs/lca/binary_lifting.cpp}
+    \subsubsection{Euler Tour Sparse Table}
+      \code{graphs/lca/lca_sparse_table.cpp}
+    \subsubsection{Tarjan Off-line LCA}
+      \code{graphs/lca/tarjan.cpp}
+  \subsection{Counting Spanning Trees}
+    Kirchoff's Theorem: The number of spanning trees of any graph is the
+    determinant of any cofactor of the Laplacian matrix in $O(n^3)$.
+    \begin{enumerate}
+        \item Let $A$ be the adjacency matrix.
+        \item Let $D$ be the degree matrix (matrix with vertex degrees on the diagonal).
+        \item Get $D-A$ and delete exactly one row and column. Any row and
+        column will do. This will be the cofactor matrix.
+        \item Get the determinant of this cofactor matrix using Gauss-Jordan.
+        \item $\text{Spanning Trees} = \left|\mathrm{cofactor}(D-A) \right|$
+    \end{enumerate}
+  \subsection{Erd\H{o}s-Gallai Theorem}
+    A sequence of non-negative integers $d_1 \ge \cdots \ge d_n$ can be represented as the
+    degree sequence of finite simple graph on $n$ vertices if and only if $d_1 + \cdots + d_n$ is
+    even and the following holds for $1 \le k \le n$:
+    \[
+    \sum_{i=1}^n d_i \le k(k-1) + \sum_{i=k+1}^n \min\left(d_i, k\right)
+    \]
+  \subsectionRed{Tree Isomorphism}
+    \code{graphs/tree_isomorphism.cpp}

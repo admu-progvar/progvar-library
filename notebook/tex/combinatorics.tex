@@ -1,0 +1,63 @@
+\section{Math II - Combinatorics}
+  \subsection{Lucas Theorem}
+    Compute $\binom{n}{k} \bmod{p}$ in $O(p + \log_p n)$ time, where $p$ is a prime.
+    \code{math/combs/lucas.cpp}
+  \subsection{Granville's Theorem}
+    Compute $\binom{n}{k} \bmod{m}$ (for any $m$) in $O(m^2 \log^2 n)$ time.
+    \code{math/combs/granville.py}
+  \subsection{Derangements}
+    Compute the number of permutations with $n$ elements such that no element is at their original position:
+    \[
+    D(n) = (n-1) \left( D(n-1) + D(n-2) \right) =  n D(n-1) + (-1)^n
+    \]
+    % \subsection{Next Permutation}
+    % \subsection{Next Combination}
+    % \subsection{Next Arrangement}
+    % \subsection{Next Partition}
+    \subsection{Factoradics}
+    Convert a permutation of $n$ items to factoradics and vice versa in $O(n \log n)$.
+    \code{math/combs/factoradics.cpp}
+  \subsection{$k$th Permutation}
+    Get the next $k$th permutation of $n$ items, if exists, using factoradics. All values should be from $0$ to $n-1$. Use factoradics methods as discussed above.
+    \code{math/combs/kth-permutation.cpp}
+  \subsection{Catalan Numbers}
+    \[
+        C_n = \frac{1}{n+1}\binom{2n}{n} =  \binom{2n}{n}-\binom{2n}{n+1}
+    \]
+    \begin{enumerate}
+      \item The number of non-crossing partitions of an $n$-element set
+      \item The number of expressions with $n$ pairs of parentheses
+      \item The number of ways $n+1$ factors can be parenthesized
+      \item The number of full binary trees with $n+1$ leaves
+      \item The number of monotonic lattice paths of an $n \times n$ grid (5-SAT problem)
+      \item The number of triangulations of a convex polygon with $n+2$ sides (non-rotational)
+      \item The number of permutations $\{1, \ldots, n\}$ without a 3-term increasing subsequence
+      \item The number of ways to form a mountain range with $n$ ups and $n$ downs
+    \end{enumerate}
+  \subsection{Stirling Numbers}
+    $s_1$: Count the number of permutations of $n$ elements with $k$ disjoint cycles
+
+    $s_2$: Count the ways to partition a set of $n$ elements into $k$ nonempty subsets
+    \[
+    s_1(n,k) = \begin{cases}
+        1 & n = k = 0 \\
+        s_1(n-1,k-1) - (n-1) s_1(n-1,k) & n,k>0 \\
+        0 & \text{elsewhere}
+    \end{cases}
+    \]
+    \[
+    s_2(n,k) = \begin{cases}
+        1 & n = k = 0 \\
+        s_2(n-1,k-1) + k s_2(n-1,k) & n,k>0 \\
+        0 & \text{elsewhere}
+    \end{cases}
+    \]
+  \subsection{Partition Function}
+    Pregenerate the number of partitions of positive integer $n$ with $n$ positive addends.
+    \[
+    p(n,k) = \begin{cases}
+        1 & n = k = 0 \\
+        0 & n < k \\
+        p(n-1,k-1) + p(n-k,k) & n \ge k
+    \end{cases}
+    \]

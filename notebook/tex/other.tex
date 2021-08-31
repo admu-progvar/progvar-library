@@ -1,0 +1,75 @@
+\section{Other Algorithms}
+  \subsection{2SAT}
+    \ifverbose
+    A fast 2SAT solver.
+    \fi
+    \code{other/two_sat.cpp}
+  \subsection{DPLL Algorithm}
+    A SAT solver that can solve a random 1000-variable SAT instance within a second.
+    \code{other/dpll.cpp}
+  \subsection{Stable Marriage}
+    \ifverbose
+    The Gale-Shapley algorithm for solving the stable marriage problem.
+    \fi
+    \code{other/stable_marriage.cpp}
+\begin{comment}
+  \subsection{Algorithm X}
+    \ifverbose
+    An implementation of Knuth's Algorithm X, using dancing links. Solves the Exact Cover problem.
+    \fi
+    \code{other/algorithm_x.cpp}
+  \subsection{Matroid Intersection}
+    Computes the maximum weight and cardinality intersection of two
+    matroids, specified by implementing the required abstract methods, in
+    $O(n^3(M_1+M_2))$.
+    \code{other/matroid_intersection.cpp}
+\end{comment}
+  \subsection{Cycle-Finding}
+    \ifverbose
+    An implementation of Floyd's Cycle-Finding algorithm.
+    \fi
+    \code{other/floyds_algorithm.cpp}
+  \subsection{Longest Increasing Subsequence}
+    \code{other/lis.cpp}
+  \subsection{Dates}
+    \ifverbose
+    Functions to simplify date calculations.
+    \fi
+    \code{other/dates.cpp}
+  \subsection{Simulated Annealing}
+    An example use of Simulated Annealing to find a permutation of length $n$
+    that maximizes $\sum_{i=1}^{n-1}|p_i - p_{i+1}|$.
+    \code{other/simulated_annealing.cpp}
+  \subsection{Simplex}
+    \begin{verbatim}
+// Two-phase simplex algorithm for solving linear programs
+// of the form
+//     maximize     c^T x
+//     subject to   Ax <= b
+//                  x >= 0
+// INPUT: A -- an m x n matrix
+//        b -- an m-dimensional vector
+//        c -- an n-dimensional vector
+//        x -- a vector where the optimal solution will be
+//             stored
+// OUTPUT: value of the optimal solution (infinity if
+//                   unbounded above, nan if infeasible)
+// To use this code, create an LPSolver object with A, b,
+// and c as arguments.  Then, call Solve(x).
+    \end{verbatim}
+    \code{other/simplex.cpp}
+  \subsection{Fast Input Reading}
+    If input or output is huge, sometimes it is beneficial to optimize the
+    input reading/output writing. This can be achieved by reading all input
+    in at once (using fread), and then parsing it manually. Output can also
+    be stored in an output buffer and then dumped once in the end (using
+    fwrite). A simpler, but still effective, way to achieve speed is to use
+    the following input reading method.
+    \code{tricks/fast_input.cpp}
+  \subsection{128-bit Integer}
+    GCC has a 128-bit integer data type named \texttt{\_\_int128}. Useful
+    if doing multiplication of 64-bit integers, or something needing a
+    little more than 64-bits to represent. There's also
+    \texttt{\_\_float128}.
+  \subsection{Bit Hacks}
+    \code{tricks/snoob.cpp}

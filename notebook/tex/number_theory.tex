@@ -1,0 +1,65 @@
+\section{Math III - Number Theory}
+\begin{comment}
+  \subsection{Eratosthenes Prime Sieve}
+    \code{math/numtheory/prime-sieve.cpp}
+  \subsection{Divisor Sieve}
+    \code{math/numtheory/divisor-sieve.cpp}
+\end{comment}
+  \subsection{Number/Sum of Divisors}
+    If a number $n$ is prime factorized where $n = {p_1}^{e_1} \times {p_2}^{e_2} \times \cdots \times {p_k}^{e_k}$, where $\sigma_0$ is the number of divisors while $\sigma_1$ is the sum of divisors:
+    \[
+    \sum_{d\mid n} d^k = \sigma_k (n) = \prod \frac{{p_i}^{k(e_i)+1}-1}{p_i -1}
+    \]
+    \[
+    \text{Product: } \prod_{d\mid n} d = n^{\frac{\sigma_1 (n)}{2}}
+    \]
+  \subsection{M\"{o}bius Sieve}
+    The M\"{o}bius function $\mu$ is the M\"{o}bius inverse of $e$ such that $e(n) = \sum_{d\mid n} \mu(d)$.
+    \code{math/numtheory/moebius-sieve.cpp}
+  \subsection{M\"{o}bius Inversion}
+    Given arithmetic functions $f$ and $g$:
+    \[
+    g(n) = \sum_{d\mid n} f(d) \quad \Leftrightarrow \quad f(n) = \sum_{d\mid n} \mu(d)\; g\left(\frac{n}{d}\right)
+    \]
+  \subsection{GCD Subset Counting}
+    Count number of subsets $S \subseteq A$ such that $\gcd(S) = g$ (modifiable).
+    \code{math/numtheory/gcd-subsets.cpp}
+  \subsection{Euler Totient}
+    Counts all integers from 1 to $n$ that are relatively prime to $n$ in $O(\sqrt{n})$ time.
+    \code{math/numtheory/totient.cpp}
+\begin{comment}
+  \subsection{Euler Phi Sieve}
+    Sieve version of Euler totient, runs in $O(N \log N)$ time. Note that $n = \sum_{d\mid n} \varphi(d)$.
+    \code{math/numtheory/phi-sieve.cpp}
+\end{comment}
+  \subsection{Extended Euclidean}
+    Assigns $x,y$ such that $ax + by = \gcd(a,b)$ and returns $\gcd(a,b)$.
+    \code{math/numtheory/extended-euclidean.cpp}
+  \subsection{Modular Exponentiation}
+    Find $b^e \pmod m$ in $O(log e)$ time.
+    \code{math/numtheory/mod_pow.cpp}
+  \subsection{Modular Inverse}
+    Find unique $x$ such that $ax \equiv 1 \pmod m$. Returns 0 if no unique solution is found. \underline{Please use modulo solver for the non-unique case.}
+    \code{math/numtheory/modinv.cpp}
+  \subsection{Modulo Solver}
+    Solve for values of $x$ for $ax \equiv b \pmod m$. Returns $(-1,-1)$ if there is no solution. Returns a pair $(x, M)$ where solution is $x \bmod M$.
+    \code{math/numtheory/modsolver.cpp}
+  \subsection{Linear Diophantine}
+    Computes integers $x$ and $y$ such that $ax+by=c$, returns $(-1,-1)$ if no solution. \underline{Tries to return positive integer answers for $x$ and $y$ if possible.}
+    \code{math/numtheory/linear-diophantine.cpp}
+  \subsection{Chinese Remainder Theorem}
+    Solves linear congruence $x \equiv b_i \pmod {m_i}$. Returns $(-1,-1)$ if there is no solution. Returns a pair $(x, M)$ where solution is $x \bmod M$.
+    \code{math/numtheory/chinese-remainder.cpp}
+    \subsubsection{Super Chinese Remainder}
+      Solves linear congruence $a_i x \equiv b_i \pmod {m_i}$. Returns $(-1,-1)$ if there is no solution.
+      \code{math/numtheory/super-crt.cpp}
+  \subsection{Primitive Root}
+    \code{math/numtheory/primitive_root.cpp}
+  \subsection{Josephus}
+    Last man standing out of $n$ if every $kth$ is killed. Zero-based, and does not kill $0$ on first pass.
+    \code{math/numtheory/josephus.cpp}
+  \subsection{Number of Integer Points under a Lines}
+    Count the number of integer solutions to $Ax+By \leq C$, $0 \leq x \leq n$,
+    $0 \leq y$. In other words, evaluate the sum $\sum_{x=0}^n\left\lfloor\dfrac{C-Ax}{B}+1\right\rfloor$.
+    To count all solutions, let $n = \left\lfloor\dfrac{c}{a}\right\rfloor$.
+    In any case, it must hold that $C-nA \geq 0$. Be very careful about overflows.

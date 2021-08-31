@@ -1,0 +1,127 @@
+\documentclass[8pt,a4paper,landscape,oneside]{amsart}
+\usepackage{minted}
+\usepackage{amsmath, amsthm, amssymb, amsfonts}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{booktabs}
+\usepackage{caption}
+\usepackage{fancyhdr}
+\usepackage{float}
+\usepackage{fullpage}
+%\usepackage{geometry}
+% \usepackage[top=0pt, bottom=1cm, left=0.3cm, right=0.3cm]{geometry}
+\usepackage[top=3pt, bottom=1cm, left=0.3cm, right=0.3cm]{geometry}
+\usepackage{graphicx}
+% \usepackage{listings}
+\usepackage{subcaption}
+\usepackage[scaled]{beramono}
+\usepackage{titling}
+\usepackage{datetime}
+\usepackage{enumitem}
+\usepackage{multicol}
+\usepackage{bookmark}
+\usepackage{color}
+\usepackage{xcolor}
+\usepackage{soul}
+\usepackage{comment}
+
+\ifdefined\ICPCCONFIG
+  \setcounter{tocdepth}{2}
+\else
+  \setcounter{tocdepth}{1}
+\fi
+
+\newcommand{\subtitle}[1]{%
+  \posttitle{%
+    \par\end{center}
+    \begin{center}\large#1\end{center}
+    \vskip0.1em\vspace{-1em}}%
+}
+
+% Minted
+\newcommand{\code}[1]{\inputminted[fontsize=\normalsize,baselinestretch=1]{cpp}{_code/#1}}
+\newcommand{\bashcode}[1]{\inputminted{bash}{_code/#1}}
+\newcommand{\regcode}[1]{\inputminted{cpp}{code/#1}}
+
+% Header/Footer
+% \geometry{includeheadfoot}
+%\fancyhf{}
+\pagestyle{fancy}
+\lhead{Ateneo de Manila University}
+\rhead{\thepage}
+\cfoot{}
+\setlength{\headheight}{15.2pt}
+\setlength{\droptitle}{-20pt}
+\posttitle{\par\end{center}}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+% Math and bit operators
+\DeclareMathOperator{\lcm}{lcm}
+\newcommand*\BitAnd{\mathrel{\&}}
+\newcommand*\BitOr{\mathrel{|}}
+\newcommand*\ShiftLeft{\ll}
+\newcommand*\ShiftRight{\gg}
+\newcommand*\BitNeg{\ensuremath{\mathord{\sim}}}
+\DeclareRobustCommand{\stirling}{\genfrac\{\}{0pt}{}}
+
+\newcommand{\sectionRed}[1]{\section{\colorbox{red}{\color{white}#1}}}
+\newcommand{\subsectionRed}[1]{\subsection{\colorbox{red}{\color{white}#1}}}
+\newcommand{\subsubsectionRed}[1]{\subsubsection{\colorbox{red}{\color{white}#1}}}
+
+\newcommand{\sectionBlack}[1]{\section{\colorbox{black}{\color{white}#1}}}
+\newcommand{\subsectionBlack}[1]{\subsection{\colorbox{black}{\color{white}#1}}}
+\newcommand{\subsubsectionBlack}[1]{\subsubsection{\colorbox{black}{\color{white}#1}}}
+
+\newenvironment{myitemize}
+{ \begin{itemize}[leftmargin=.5cm]
+    \setlength{\itemsep}{0pt}
+    \setlength{\parskip}{0pt}
+    \setlength{\parsep}{0pt}     }
+{ \end{itemize}                  }
+
+% Title/Author
+\title{$KFC$}
+\subtitle{AdMU Progvar}
+\date{\ddmmyyyydate{\today{}}}
+
+% Output Verbosity
+\newif\ifverbose
+\verbosetrue
+% \verbosefalse
+
+\begin{document}
+
+\begin{multicols*}{3}
+\maketitle
+\thispagestyle{fancy}
+\vspace{-3em}
+% \addtocontents{toc}{\protect\enlargethispage{\baselineskip}}
+\tableofcontents
+
+% \clearpage
+
+\begin{comment}
+\section{Code Templates}
+	\code{header.cpp}
+\end{comment}
+
+\input{tex/data-structures}
+\input{tex/dp}
+\input{tex/geometry}
+\input{tex/graphs}
+\input{tex/math}
+\input{tex/strings}
+
+\ifdefined\ICPCCONFIG
+  \input{tex/other}
+  \input{tex/useful_info}
+  \input{tex/other_combinatorics}
+\fi
+
+\clearpage
+
+
+\end{multicols*}
+
+\end{document}
