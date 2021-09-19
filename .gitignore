@@ -44,3 +44,5 @@
 
 /notebook/_docs
 /notebook/_tex
+
+/tests/build/
