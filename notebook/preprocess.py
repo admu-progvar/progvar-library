@@ -8,7 +8,6 @@ MARGIN = 100 - 40 - 8 + 7 - 1 + (0 if TO_HASH else 4)
 counter = 0
 
 COMMENTS = ["\"\"\"", "\'\'\'", "/*", "*/"]
-print(COMMENTS)
 
 def mkhash(line):
     global counter
@@ -22,7 +21,7 @@ def mkhash(line):
         yield hash
         # yield hashlib.md5(conc).hexdigest()[:2]
 
-for path, dirs, files in os.walk('../src'):
+for path, dirs, files in os.walk('../pvl/abridged'):
     for f in files:
         if (f.endswith(".cpp") or f.endswith('.java') or
             f.endswith('.sh') or f.endswith('.py')) and not f.endswith(".test.cpp"):
