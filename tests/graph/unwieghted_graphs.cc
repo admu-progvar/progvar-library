@@ -1,8 +1,8 @@
 #include <gtest/gtest.h>
-#include "../pvl/graph/graph.hpp"
+#include "../pvl/graph/unweighted_graphs.hpp"
 
 
-TEST(BaseGraphs, AdjacencyListUndirected) {
+TEST(UnweightedGraphs, AdjacencyListUndirected) {
   int N = 4;
   pvl::graph_adj_list g(N);
   g.add_edge(0, 1);
@@ -15,7 +15,7 @@ TEST(BaseGraphs, AdjacencyListUndirected) {
   EXPECT_EQ(g.adj[3].size(), 1);
 }
 
-TEST(BaseGraphs, AdjacencyListDirected) {
+TEST(UnweightedGraphs, AdjacencyListDirected) {
   int N = 4;
   pvl::graph_adj_list g(N, true);
   g.add_edge(0, 1);
@@ -28,7 +28,7 @@ TEST(BaseGraphs, AdjacencyListDirected) {
   EXPECT_EQ(g.adj[3].size(), 0);
 }
 
-TEST(BaseGraphs, AdjacencyMatrixUndirected) {
+TEST(UnweightedGraphs, AdjacencyMatrixUndirected) {
   int N = 4;
   pvl::graph_adj_mat g(N);
   g.add_edge(0, 1);
@@ -44,7 +44,7 @@ TEST(BaseGraphs, AdjacencyMatrixUndirected) {
   EXPECT_EQ(g.mat[3][2], 1);
 }
 
-TEST(BaseGraphs, AdjacencyMatrixDirected) {
+TEST(UnweightedGraphs, AdjacencyMatrixDirected) {
   int N = 4;
   pvl::graph_adj_mat g(N, true);
   g.add_edge(0, 1);
@@ -60,7 +60,7 @@ TEST(BaseGraphs, AdjacencyMatrixDirected) {
   EXPECT_EQ(g.mat[3][2], 0);
 }
 
-TEST(BaseGraphs, EdgeListUndirected) {
+TEST(UnweightedGraphs, EdgeListUndirected) {
   int N = 4;
   pvl::graph_edge_list g(N);
   g.add_edge(0, 1);
@@ -73,7 +73,7 @@ TEST(BaseGraphs, EdgeListUndirected) {
     EXPECT_LT(u, v);
 }
 
-TEST(BaseGraphs, EdgeListDirected) {
+TEST(UnweightedGraphs, EdgeListDirected) {
   int N = 4;
   pvl::graph_edge_list g(N, true);
   g.add_edge(0, 1);

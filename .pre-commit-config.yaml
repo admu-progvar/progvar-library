@@ -14,7 +14,7 @@ repos:
       - id: cpplint
         args: [
           "--exclude=pvl/abridged",
-          "--filter=-legal/copyright,-readability/alt_tokens,-whitespace/parens",
+          "--filter=-legal/copyright,-readability/alt_tokens,-whitespace/parens,-build/include_what_you_use,-runtime/int",
           "--linelength=62"
         ]
 files: 'pvl'

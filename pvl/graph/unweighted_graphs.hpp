@@ -1,5 +1,5 @@
-#ifndef PVL_GRAPH_GRAPH_HPP_
-#define PVL_GRAPH_GRAPH_HPP_ 1
+#ifndef PVL_GRAPH_UNWEIGHTED_GRAPHS_HPP_
+#define PVL_GRAPH_UNWEIGHTED_GRAPHS_HPP_ 1
 
 #include <algorithm>
 #include <utility>
@@ -10,19 +10,19 @@
 namespace pvl {
 
 struct graph_adj_list {
-    int n;
-    bool directed;
-    std::vector<std::vector<int>> adj;
-    explicit graph_adj_list(
-      int n, bool directed = false
-    ): n(n), directed(directed) {
-      std::vector<std::vector<int>>(n).swap(adj);
-    }
-    void add_edge(int u, int v) {
-      adj[u].push_back(v);
-      if (not directed)
-        adj[v].push_back(u);
-    }
+  int n;
+  bool directed;
+  std::vector<std::vector<int>> adj;
+  explicit graph_adj_list(
+    int n, bool directed = false
+  ): n(n), directed(directed) {
+    std::vector<std::vector<int>>(n).swap(adj);
+  }
+  void add_edge(int u, int v) {
+    adj[u].push_back(v);
+    if (not directed)
+      adj[v].push_back(u);
+  }
 };
 
 struct graph_adj_mat {
@@ -60,4 +60,4 @@ struct graph_edge_list {
 
 }  // namespace pvl
 
-#endif  // PVL_GRAPH_GRAPH_HPP_
+#endif  // PVL_GRAPH_UNWEIGHTED_GRAPHS_HPP_
