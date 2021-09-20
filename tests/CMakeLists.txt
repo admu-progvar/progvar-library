@@ -21,10 +21,14 @@ FetchContent_MakeAvailable(googletest)
 
 include(GoogleTest)
 
-add_executable(BaseGraph graph/graph.cc)
+add_executable(BaseGraph graph/unwieghted_graphs.cc)
 target_link_libraries(BaseGraph gtest_main)
 gtest_discover_tests(BaseGraph)
 
 add_executable(Dijkstra graph/shortest_paths/dijkstra.cc)
 target_link_libraries(Dijkstra gtest_main)
 gtest_discover_tests(Dijkstra)
+
+add_executable(FloydWarshall graph/shortest_paths/floyd_warshall.cc)
+target_link_libraries(FloydWarshall gtest_main)
+gtest_discover_tests(FloydWarshall)
