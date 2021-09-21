@@ -37,8 +37,7 @@ struct graph_floyd_marshall: public graph_adj_mat_weighted<
       for (int u = 0; u < this->n; ++u)
         for (int v = 0; v < this->n; ++v)
           dists[u][v] = min(
-            dists[u][v],
-            dists[u][k] + dists[k][v]
+            dists[u][v], add(dists[u][k], dists[k][v])
           );
     return dists;
   }
