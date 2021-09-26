@@ -1,5 +1,5 @@
-#ifndef PVL_GRAPH_UNWEIGHTED_GRAPHS_HPP_
-#define PVL_GRAPH_UNWEIGHTED_GRAPHS_HPP_ 1
+#ifndef PVL_GRAPHS_UNWEIGHTED_GRAPHS_HPP_
+#define PVL_GRAPHS_UNWEIGHTED_GRAPHS_HPP_ 1
 
 #include <algorithm>
 #include <utility>
@@ -60,4 +60,4 @@ struct graph_edge_list {
 
 }  // namespace pvl
 
-#endif  // PVL_GRAPH_UNWEIGHTED_GRAPHS_HPP_
+#endif  // PVL_GRAPHS_UNWEIGHTED_GRAPHS_HPP_

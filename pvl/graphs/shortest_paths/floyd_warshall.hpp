@@ -1,5 +1,5 @@
-#ifndef PVL_GRAPH_SHORTEST_PATHS_FLOYD_WARSHALL_HPP_
-#define PVL_GRAPH_SHORTEST_PATHS_FLOYD_WARSHALL_HPP_ 1
+#ifndef PVL_GRAPHS_SHORTEST_PATHS_FLOYD_WARSHALL_HPP_
+#define PVL_GRAPHS_SHORTEST_PATHS_FLOYD_WARSHALL_HPP_ 1
 
 #include "math/algebra.hpp"
 #include "graph/weighted_graphs.hpp"
@@ -45,4 +45,4 @@ struct graph_floyd_marshall: public graph_adj_mat_weighted<
 
 }  // namespace pvl
 
-#endif  // PVL_GRAPH_SHORTEST_PATHS_FLOYD_WARSHALL_HPP_
+#endif  // PVL_GRAPHS_SHORTEST_PATHS_FLOYD_WARSHALL_HPP_

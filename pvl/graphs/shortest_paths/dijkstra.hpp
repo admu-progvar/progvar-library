@@ -1,5 +1,5 @@
-#ifndef PVL_GRAPH_SHORTEST_PATHS_DIJKSTRA_HPP_
-#define PVL_GRAPH_SHORTEST_PATHS_DIJKSTRA_HPP_ 1
+#ifndef PVL_GRAPHS_SHORTEST_PATHS_DIJKSTRA_HPP_
+#define PVL_GRAPHS_SHORTEST_PATHS_DIJKSTRA_HPP_ 1
 
 #include <utility>
 #include <vector>
@@ -59,4 +59,4 @@ struct graph_dijkstra: public graph_adj_list_weighted<T> {
 
 }  // namespace pvl
 
-#endif  // PVL_GRAPH_SHORTEST_PATHS_DIJKSTRA_HPP_
+#endif  // PVL_GRAPHS_SHORTEST_PATHS_DIJKSTRA_HPP_

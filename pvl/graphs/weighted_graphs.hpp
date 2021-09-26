@@ -1,5 +1,5 @@
-#ifndef PVL_GRAPH_WEIGHTED_GRAPHS_HPP_
-#define PVL_GRAPH_WEIGHTED_GRAPHS_HPP_ 1
+#ifndef PVL_GRAPHS_WEIGHTED_GRAPHS_HPP_
+#define PVL_GRAPHS_WEIGHTED_GRAPHS_HPP_ 1
 
 #include <algorithm>
 #include <utility>
@@ -83,4 +83,4 @@ struct graph_edge_list_weighted {
 
 }  // namespace pvl
 
-#endif  // PVL_GRAPH_WEIGHTED_GRAPHS_HPP_
+#endif  // PVL_GRAPHS_WEIGHTED_GRAPHS_HPP_

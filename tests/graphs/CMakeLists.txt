@@ -1,0 +1,2 @@
+include_directories(shortest_paths)
+include_directories(max_flow)

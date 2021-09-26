@@ -17,6 +17,12 @@ template <typename T>
 T add_id() { return T(0); }
 
 template <typename T>
+T mult(T a, T b) { return a * b; }
+
+template <typename T>
+T mult_id() { return T(1); }
+
+template <typename T>
 T min(T a, T b) { return std::min(a, b); }
 
 template <typename T>
