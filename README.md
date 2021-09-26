@@ -1,22 +1,29 @@
 # AdMU ProgVar Competitive Programming Library
-A collection of algorithms, data structures and other useful information for competitive programming. Used by everyone in the Ateneo de Manila University Programming Varsity.
+A collection of algorithms, data structures and other useful information for competitive programming.
+Used and maintained by members of the Ateneo de Manila University Programming Varsity.
 
 ---
 
 ### Prerequisites
-- Latex (warning: this could take up 5 Gb of space)
+- Latex and extra plugins and fonts
 ```
+// Warning: this could take up around 2 Gb of space
+sudo apt install texlive-latex-base
+sudo apt install texlive-latex-extra
+sudo apt install texlive-fonts-extra
+// or simply,
 sudo apt install texlive-full
-```
-- Cmake, for testing
-```
-sudo apt install cmake
+// Warning: this could take up around 5 Gb of space
 ```
 - Pygments
 ```
 pip3 install Pygments
-#or
+// or
 pip install Pygments
+```
+- Cmake, for testing
+```
+sudo apt install cmake
 ```
 
 #### Pre-commit
@@ -53,8 +60,7 @@ cd tests
 ```
 - Then build the tests
 ```
-cmake -S . -B build
-cmake --build build
+cmake -S . -B build && cmake --build build
 ```
 - Finally, run the tests
 ```
@@ -69,9 +75,7 @@ ctest
 
 ### Todo
 - Add layout.txt
-- Add tests
-- Automate testing and building docs with GitHub Actions
-- Clean up Geometry section
+- Add more tests
 - Add implementation of:
   - Dominator Tree
   - Fast Matrix Inverse in $F_2$

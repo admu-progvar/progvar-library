@@ -155,14 +155,16 @@ description: "A collection of algorithms, data structures and other useful infor
 ## ReadMe
 
 ### How to contribute:
-- clone this repository using `git clone https://github.com/leloykun/admu-progvar-notebook.git`
-- add codes to the folder `/code` and edit `notebook.tex`
-- install latex with `sudo apt install texlive-full` (warning: this could take up 5Gb of space)
-- install `Pygments` with `pip3 install Pygments` or `pip install Pygments`
-- run `makefile.sh`
-- submit a pull request
-- ...
-- profit
+1. Clone this repository using `git clone https://github.com/leloykun/admu-progvar-notebook.git`
+2. Create a new branch using `git checkout -b [add your 2-letter initials here]--[branch code]`. For example `git checkout -b fc--edit-readme`
+3. Add codes to the folder `/pvl`
+4. Add tests if necessary. See the section below for more details.
+5. Add an abridged version of your codes to `/pvl/abridged`
+6. Document your codes in `notebook.tex`
+7. Run `notebook/makefile.sh` to generate the notebook
+8. Submit a pull request
+9. Tag someone to review your code
+10. Merge your PR only after receiving at least 1 approval from a reviewer
 
 ### (sub)(sub)Section Syntax:
 - <span style="color:red">Red</span>: copy-pasted / non-tested code
@@ -172,9 +174,7 @@ description: "A collection of algorithms, data structures and other useful infor
 
 ### Todo
 - Add layout.txt
-- Add tests
-- Automate testing and building docs with GitHub Actions
-- Clean up Geometry section
+- Add more tests
 - Add implementation of:
   - Dominator Tree
   - Fast Matrix Inverse in `F_2`
