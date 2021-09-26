@@ -11,9 +11,11 @@ Used and maintained by members of the Ateneo de Manila University Programming Va
 sudo apt install texlive-latex-base
 sudo apt install texlive-latex-extra
 sudo apt install texlive-fonts-extra
+
 // or simply,
-sudo apt install texlive-full
+
 // Warning: this could take up around 5 Gb of space
+sudo apt install texlive-full
 ```
 - Pygments
 ```
@@ -79,6 +81,7 @@ ctest
 - Add implementation of:
   - Dominator Tree
   - Fast Matrix Inverse in $F_2$
+- Add benchmarking with [Google Benchmark](https://github.com/google/benchmark)
 
 ## Maintainers
 ### Lead Maintainer
