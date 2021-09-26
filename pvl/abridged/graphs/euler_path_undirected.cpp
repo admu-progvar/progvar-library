@@ -1,7 +1,8 @@
-multiset<int> adj[1010];
-list<int> L;
-list<int>::iterator euler(int at, int to,
-    list<int>::iterator it) {
+std::multiset<int> adj[1010];
+std::list<int> L;
+std::list<int>::iterator euler(
+  int at, int to, std::list<int>::iterator it
+) {
   if (at == to) return it;
   L.insert(it, at), --it;
   while (!adj[at].empty()) {

@@ -1,12 +1,15 @@
-double min_mean_cycle(vector<vector<pair<int,double>>> adj){
-  int n = size(adj); double mn = INFINITY;
-  vector<vector<double> > arr(n+1, vector<double>(n, mn));
-  arr[0][0] = 0;
-  rep(k,1,n+1) rep(j,0,n) iter(it,adj[j])
-    arr[k][it->first] = min(arr[k][it->first],
-                            it->second + arr[k-1][j]);
-  rep(k,0,n) {
-    double mx = -INFINITY;
-    rep(i,0,n) mx = max(mx, (arr[n][i]-arr[k][i])/(n-k));
-    mn = min(mn, mx); }
-  return mn; }
+typedef std::vector<double> vd;
+double min_mean_cycle(graph &g) {
+  double mn = INF;
+  std::vector<vd> dp(g.n+1, vd(g.n, mn));
+  dp[0][0] = 0;
+  for (int k = 1; k <= g.n; ++k)
+    for (int u = 0; u < g.n; ++u)
+      for (auto &[v, w]: g.adj[u])
+        dp[k][v] = std::min(ar[k][v], dp[k-1][u] + w);
+  for (int k = 0; k < g.n; ++k) {
+    double mx = -INF;
+    for (int u = 0; u < g.n; ++u)
+      mx = std::max(mx, (dp[g.n][u] - dp[k][u]) / (g.n - k));
+    mn = std::min(mn, mx);  }
+  return mn;  }

@@ -6,7 +6,7 @@ struct flow_network {
   int n, s, t, *adj_ptr, *par, *dist;
   std::vector<edge> edges;
   std::vector<int> *adj;
-  flow_network(int n, int s, int t) : n(n), s(s), t(t) {
+  flow_network(int n) : n(n) {
     adj     = new std::vector<int>[n];
     adj_ptr = new int[n];
     par  = new int[n];
@@ -43,7 +43,8 @@ struct flow_network {
   bool aug_path() {
     for (int u = 0; u < n; ++u) par[u] = -1;
     return dfs(s); }
-  ll calc_max_flow() {
+  ll calc_max_flow(int s, int t) {
+    this->s = s;  this->t = t;
     ll total_flow = 0;
     while (make_level_graph()) {
       for (int u = 0; u < n; ++u)   adj_ptr[u] = 0;

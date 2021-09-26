@@ -27,8 +27,8 @@ for path, dirs, files in os.walk('../pvl/abridged'):
             f.endswith('.sh') or f.endswith('.py')) and not f.endswith(".test.cpp"):
 
             p = os.path.join(path, f)
-            fout_code = os.path.join("_code", '/'.join(path.split('/')[2:]), f)
-            fout_docs = os.path.join("_docs", '/'.join(path.split('/')[2:]), '.'.join(f.split('.')[:-1]) + '.md')
+            fout_code = os.path.join("_code", '/'.join(path.split('/')[3:]), f)
+            fout_docs = os.path.join("_docs", '/'.join(path.split('/')[3:]), '.'.join(f.split('.')[:-1]) + '.md')
             print(fout_code, fout_docs)
 
             try:
