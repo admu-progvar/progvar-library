@@ -27,13 +27,14 @@
       \code{geom/circ-line-isect.cpp}
     \subsubsection{Circle-Circle Intersection}
       \code{geom/circ-circ-isect.cpp}
-	\subsection{Polygon Areas}
-    Find the area of any 2D polygon given as points in $O(n)$.
-    \code{geom/poly-area.cpp}
+	\subsection{Areas}
+    \subsubsection{Polygon Area}
+      Find the area of any 2D polygon given as points in $O(n)$.
+      \code{geom/poly-area.cpp}
     \subsubsection{Triangle Area}
       Find the area of a triangle using only their lengths. Lengths must be valid.
       \code{geom/tri-area.cpp}
-    \subsubsection*{Cyclic Quadrilateral Area}
+    \subsubsection{Cyclic Quadrilateral Area}
       Find the area of a cyclic quadrilateral using only their lengths. A quadrilateral is
       cyclic if its inner angles sum up to $360^\circ$.
       \code{geom/cyc-quad-area.cpp}
@@ -45,7 +46,7 @@
       Get the convex hull of a set of points using Graham-Andrew's scan. This sorts the
       points at $O(n \log n)$, then performs the Monotonic Chain Algorithm at $O(n)$.
       \code{geom/convex-hull.cpp}
-    \subsubsectionRed{3D Convex Hull}
+    \subsubsection{3D Convex Hull}
       Currently $O(N^2)$, but can be optimized to a randomized $O(N\log{N})$ using the Clarkson-Shor algorithm.
       Sauce: \href{https://codeforces.com/blog/entry/81768}{Efficient 3D Convex Hull Tutorial on CF}.
       \code{geom/convex-hull-3d.cpp}

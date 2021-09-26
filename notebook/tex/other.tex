@@ -1,9 +1,13 @@
 \section{Other Algorithms}
   \subsection{2SAT}
-    \ifverbose
-    A fast 2SAT solver.
-    \fi
+    Build the implication graph of the input by converting ORs $A \vee B$ to
+    $!A \rightarrow B$ and $!B \rightarrow A$. This forms a bipartite graph.
+    If there exists $X$ such that both $X$ and $!X$ are in the same strongly connected component,
+    then there is no solution. Otherwise, iterate through the literals, arbitrarily assign
+    a truth value to unassigned literals and propagate the values to its neighbors.
+\begin{comment}
     \code{other/two_sat.cpp}
+\end{comment}
   \subsection{DPLL Algorithm}
     A SAT solver that can solve a random 1000-variable SAT instance within a second.
     \code{other/dpll.cpp}

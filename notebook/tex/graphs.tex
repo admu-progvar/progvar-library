@@ -60,7 +60,8 @@
 		\subsubsection{Push-relabel}
 			$\omega(VE+V^2\sqrt{E})$, $O(V^3)$
 			\code{graphs/max_flow/push_relabel.cpp}
-    \subsubsectionRed{Gomory-Hu (All-pairs Maximum Flow)}
+    \subsubsection{Gomory-Hu (All-pairs Maximum Flow)}
+      $O(V^3E)$, possibly amortized $O(V^3E)$.
       \code{graphs/max_flow/gomory_hu_tree.cpp}
   \subsection{Minimum Cost Maximum Flow}
     \code{graphs/max_flow/mcst.cpp}
@@ -149,5 +150,5 @@
     \[
     \sum_{i=1}^n d_i \le k(k-1) + \sum_{i=k+1}^n \min\left(d_i, k\right)
     \]
-  \subsectionRed{Tree Isomorphism}
+  \subsection{Tree Isomorphism}
     \code{graphs/tree_isomorphism.cpp}

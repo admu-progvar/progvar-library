@@ -6,11 +6,12 @@ int simulated_annealing(int n, double seconds) {
   uniform_int_distribution<int> randint(0, n - 2);
   // random initial solution
   vi sol(n);
-  rep(i,0,n) sol[i] = i + 1;
-  random_shuffle(sol.begin(), sol.end());
+  for (int i = 0; i < n; ++i) sol[i] = i + 1;
+  std::random_shuffle(sol.begin(), sol.end());
   // initialize score
   int score = 0;
-  rep(i,1,n) score += abs(sol[i] - sol[i-1]);
+  for (int i = 1; i < n; ++i)
+    score += std::abs(sol[i] - sol[i-1]);
   int iters = 0;
   double T0 = 100.0, T1 = 0.001,
       progress = 0, temp = T0,
@@ -18,19 +19,19 @@ int simulated_annealing(int n, double seconds) {
   while (true) {
     if (!(iters & ((1 << 4) - 1))) {
       progress = (curtime() - starttime) / seconds;
-      temp = T0 * pow(T1 / T0, progress);
+      temp = T0 * std::pow(T1 / T0, progress);
       if (progress > 1.0) break; }
     // random mutation
-    int a = randint(rng);
+    int a = std::randint(rng);
     // compute delta for mutation
     int delta = 0;
-    if (a > 0) delta += abs(sol[a+1] - sol[a-1])
-                      - abs(sol[a] - sol[a-1]);
-    if (a+2 < n) delta += abs(sol[a] - sol[a+2])
-                        - abs(sol[a+1] - sol[a+2]);
+    if (a > 0) delta += std::abs(sol[a+1] - sol[a-1])
+                      - std::abs(sol[a] - sol[a-1]);
+    if (a+2 < n) delta += std::abs(sol[a] - sol[a+2])
+                        - std::abs(sol[a+1] - sol[a+2]);
     // maybe apply mutation
     if (delta >= 0 || randfloat(rng) < exp(delta / temp)) {
-      swap(sol[a], sol[a+1]);
+      std::swap(sol[a], sol[a+1]);
       score += delta;
       // if (score >= target) return;
     }

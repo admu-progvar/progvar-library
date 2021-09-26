@@ -1,29 +1,25 @@
-#include "../data-structures/union_find.cpp"
+#include "data-structures/union_find.cpp"
 struct tarjan_olca {
-  int *ancestor;
-  vi *adj, answers;
-  vii *queries;
-  bool *colored;
+  vi ancestor, answers;
+  vvi adj;
+  vvii queries;
+  std::vector<bool> colored;
   union_find uf;
-  tarjan_olca(int n, vi *_adj) : adj(_adj), uf(n) {
-    colored = new bool[n];
-    ancestor = new int[n];
-    queries = new vii[n];
-    memset(colored, 0, n); }
+  tarjan_olca(int n, vvi &adj) : adj(adj), uf(n) {
+    vi(n).swap(ancestor);
+    vvii(n).swap(queries);
+    std::vector<bool>(n, false).swap(colored); }
   void query(int x, int y) {
     queries[x].push_back(ii(y, size(answers)));
     queries[y].push_back(ii(x, size(answers)));
     answers.push_back(-1); }
   void process(int u) {
     ancestor[u] = u;
-    rep(i,0,size(adj[u])) {
-      int v = adj[u][i];
+    for (int v : adj[u]) {
       process(v);
       uf.unite(u,v);
       ancestor[uf.find(u)] = u; }
     colored[u] = true;
-    rep(i,0,size(queries[u])) {
-      int v = queries[u][i].first;
-      if (colored[v])
-        answers[queries[u][i].second] = ancestor[uf.find(v)];
-} } };
+    for (auto &[a, b]: queries[u])
+      if (colored[a]) answers[b] = ancestor[uf.find(a)];
+} };
