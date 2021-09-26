@@ -3,6 +3,7 @@
 
 #include <vector>
 #include <queue>
+#include <cassert>
 
 #include "math/constants.hpp"
 
@@ -74,7 +75,14 @@ struct flow_network_dinic {
           edges[i].f   += flow;
           edges[i^1].f -= flow; }
         total_flow += flow; } }
-    return total_flow; } };
+    return total_flow; }
+  std::vector<bool> min_cut(int s, int t) {
+    calc_max_flow(s, t);
+    assert(!make_level_graph(s, t));
+    std::vector<bool> cut_mem(n);
+    for (int u = 0; u < n; ++u)
+      cut_mem[u] = (dist[u] != -1);
+    return cut_mem; } };
 
 }  // namespace pvl
 
