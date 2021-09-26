@@ -1,5 +1,5 @@
 #include <gtest/gtest.h>
-#include "../pvl/graph/unweighted_graphs.hpp"
+#include "../pvl/graphs/unweighted_graphs.hpp"
 
 
 TEST(UnweightedGraphs, AdjacencyListUndirected) {

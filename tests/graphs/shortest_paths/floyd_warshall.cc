@@ -2,7 +2,7 @@
 
 #include <gtest/gtest.h>
 #include "../pvl/math/constants.hpp"
-#include "../pvl/graph/shortest_paths/floyd_warshall.hpp"
+#include "../pvl/graphs/shortest_paths/floyd_warshall.hpp"
 
 int N = 5;
 

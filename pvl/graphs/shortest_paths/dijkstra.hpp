@@ -6,7 +6,7 @@
 #include <queue>
 
 #include "math/algebra.hpp"
-#include "graph/weighted_graphs.hpp"
+#include "graphs/weighted_graphs.hpp"
 
 
 namespace pvl {

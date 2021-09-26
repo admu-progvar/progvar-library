@@ -36,7 +36,3 @@ gtest_discover_tests(FloydWarshall)
 add_executable(Dinic graphs/max_flow/dinic.cc)
 target_link_libraries(Dinic gtest_main)
 gtest_discover_tests(Dinic)
-
-add_executable(MinCostMaxFlow graphs/max_flow/min_cost_max_flow_graph.cc)
-target_link_libraries(MinCostMaxFlow gtest_main)
-gtest_discover_tests(MinCostMaxFlow)
