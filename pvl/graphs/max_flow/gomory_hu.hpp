@@ -12,6 +12,26 @@ typedef long long ll;
 
 namespace pvl {
 
+/*
+  Gomoru-hu Tree
+
+  For every weighted graph, there exists a tree, called the
+  Gomory-hu Tree, that satisfies the following properties:
+  1. The vertex set of the tree and the graph is the same.
+  2. The maximum flow of the tree equals the maximum flow of
+     the graph.
+
+  The Minimum Weight Basis of a Planar Graph corresponds to
+  the Gomory-hu Tree of the Dual Graph.
+
+  Complexity:
+  - Tree construction: O(N * max_flow)
+  - Max flow calculation: O(N)
+
+  Practice Problems:
+  1. [Codeforces 343E](https://codeforces.com/contest/343/problem/E)
+  2. [Codeforces Gym 100153D](https://codeforces.com/gym/100153/attachments)
+*/
 struct gomory_hu_tree {
   int n;
   std::vector<int> dep;
