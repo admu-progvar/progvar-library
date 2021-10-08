@@ -36,3 +36,7 @@ gtest_discover_tests(FloydWarshall)
 add_executable(MaxFlow graphs/max_flow/max_flow.cc)
 target_link_libraries(MaxFlow gtest_main)
 gtest_discover_tests(MaxFlow)
+
+add_executable(Tree graphs/tree.cc)
+target_link_libraries(Tree gtest_main)
+gtest_discover_tests(Tree)
