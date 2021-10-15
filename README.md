@@ -2,7 +2,28 @@
 A collection of algorithms, data structures and other useful information for competitive programming.
 Used and maintained by members of the Ateneo de Manila University Programming Varsity.
 
+![front page](https://user-images.githubusercontent.com/14250344/137528399-de98a987-df39-4241-baed-0f707f32e6e1.png)
+
+This repo is a mixture of our previous team notebook, [Reykjavik University's open-source team notebook](https://github.com/SuprDewd/CompetitiveProgramming), and various code snippets from the web.
+
 ---
+
+## Goals
+
+### Long-term Goals:
+- Develop this into a fully-fledged code library for competitive programming. Like [Atcoder's AC Library](https://github.com/atcoder/ac-library) but with more algorithms and data structures.
+- Write wikis, documentation, and tutorials for each of the algorithms and data structures here.
+- Make the team notebook easily customizable; maybe based on analytics on how often a team uses each code snippet.
+
+### Short-term Goals
+- Move the codes in `pvl/abridged` to `pvl` and add tests for each of them.
+- Clean-up the team notebook.
+- Add tutorials (even just as comments) on how to use each code snippet.
+- Replace the headline image with something more catchy.
+
+---
+
+## How to Contribute
 
 ### Prerequisites
 - Latex and extra plugins and fonts
@@ -33,7 +54,7 @@ We use [Pre-commit](https://pre-commit.com/) to make sure the codes are properly
 - Install Pre-commit using `pip3 install pre-commit`.
 - Then run `pre-commit install` to setup the git hook scripts.
 
-### How to contribute:
+### Contribution Workflow:
 1. Clone this repository using `git clone https://github.com/leloykun/admu-progvar-notebook.git`
 2. Create a new branch using `git checkout -b [add your 2-letter initials here]--[branch code]`. For example `git checkout -b fc--edit-readme`
 3. Add codes to the folder `/pvl`
@@ -56,7 +77,7 @@ target_link_libraries([Name of Test] gtest_main)
 gtest_discover_tests([Name of Test])
 ```
 #### Testing
-- First, go to `/tests`
+- First, go to `/tests/`
 ```
 cd tests
 ```
@@ -64,14 +85,18 @@ cd tests
 ```
 cmake -S . -B build && cmake --build build
 ```
-- Finally, run the tests
+- Go to `build/`
+```
+cd build
+```
+- And finally, run the tests
 ```
 ctest
 ```
 
 ### (sub)(sub)Section Syntax:
-- <span style="color:red">Red</span>: copy-pasted / non-tested code
-- <span style="color:black">Black</span>: no code yet
+- <span style="color:red">Red</span>: copy-pasted / non-tested code.
+- <span style="color:black">Black</span>: either no code yet or we intentionally removed it from the default format of the team notebook.
 - To color a (sub)(sub)section, simple use `(sub)(sub)section(COLOR)`
     - For example, `subsectionBlack` gets you a black-colored subsection
 
