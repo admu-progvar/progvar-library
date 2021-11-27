@@ -21,9 +21,6 @@ This repo is a mixture of our previous team notebook, [Reykjavik University's op
 - Add tutorials (even just as comments) on how to use each code snippet.
 - Replace the headline image with something more catchy.
 
-### For Hacktober participants:
-- Whoever contributes the most by the end of the month will receive a free copy of [HyperRouge](https://store.steampowered.com/app/342610/HyperRogue/) on Steam.
-
 ---
 
 ## How to Contribute
@@ -118,4 +115,4 @@ ctest
   - Software Engineer @ [Expedock](https://www.expedock.com/)
   - BS Mathematics @ Ateneo de Manila
 ### Contributors
-None, so far. You could be the first! Just don't hesitate to put up a Pull Request.
+- Ateneo's Programming Varsity Alumni
