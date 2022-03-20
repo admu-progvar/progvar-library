@@ -1,6 +1,7 @@
 import os
 import hashlib
 import re
+from pathlib import PurePath, Path
 
 TO_HASH = False
 MARGIN = 100 - 40 - 8 + 7 - 1 + (0 if TO_HASH else 4)
@@ -22,13 +23,15 @@ def mkhash(line):
         # yield hashlib.md5(conc).hexdigest()[:2]
 
 for path, dirs, files in os.walk('../pvl/abridged'):
+    path_start = len(PurePath(path).parts)
     for f in files:
         if (f.endswith(".cpp") or f.endswith('.java') or
             f.endswith('.sh') or f.endswith('.py')) and not f.endswith(".test.cpp"):
 
             p = os.path.join(path, f)
-            fout_code = os.path.join("_code", '/'.join(path.split('/')[3:]), f)
-            fout_docs = os.path.join("_docs", '/'.join(path.split('/')[3:]), '.'.join(f.split('.')[:-1]) + '.md')
+            path_tuple = PurePath(path).parts
+            fout_code = os.path.join("_code", Path(*path_tuple[path_start:]), f)
+            fout_docs = os.path.join("_docs", Path(*path_tuple[path_start:]), '.'.join(f.split('.')[:-1]) + '.md')
             print(fout_code, fout_docs)
 
             try:
