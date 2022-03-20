@@ -116,3 +116,4 @@ ctest
   - BS Mathematics @ Ateneo de Manila
 ### Contributors
 - Ateneo's Programming Varsity Alumni
+- [Justin M. Tan](https://github.com/bullybutcher)
