@@ -40,3 +40,7 @@ gtest_discover_tests(MaxFlow)
 add_executable(Tree graphs/tree.cc)
 target_link_libraries(Tree gtest_main)
 gtest_discover_tests(Tree)
+
+add_executable(Prim graphs/mst/prim.cc)
+target_link_libraries(Prim gtest_main)
+gtest_discover_tests(Prim)

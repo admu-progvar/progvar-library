@@ -76,8 +76,7 @@ struct graph_edge_list_weighted {
     edges.insert(edge);
     if (weight.find(edge) == weight.end())
       weight[edge] = add_id();
-    else
-      weight[edge] = add(weight[edge], w);
+    weight[edge] = add(weight[edge], w);
   }
 };
 
