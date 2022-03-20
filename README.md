@@ -55,7 +55,7 @@ We use [Pre-commit](https://pre-commit.com/) to make sure the codes are properly
 - Then run `pre-commit install` to setup the git hook scripts.
 
 ### Contribution Workflow:
-1. Clone this repository using `git clone https://github.com/leloykun/admu-progvar-notebook.git`
+1. Clone this repository using `git clone https://github.com/admu-progvar/progvar-library.git`
 2. Create a new branch using `git checkout -b [add your 2-letter initials here]--[branch code]`. For example `git checkout -b fc--edit-readme`
 3. Add codes to the folder `/pvl`
 4. Add tests if necessary. See the section below for more details.
@@ -116,3 +116,4 @@ ctest
   - BS Mathematics @ Ateneo de Manila
 ### Contributors
 - Ateneo's Programming Varsity Alumni
+- [Justin M. Tan](https://github.com/bullybutcher)
