@@ -116,3 +116,4 @@ ctest
   - BS Mathematics @ Ateneo de Manila
 ### Contributors
 - Ateneo's Programming Varsity Alumni
+- [Raphael Jose A. Montemayor](https://github.com/rap2montemayor)

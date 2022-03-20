@@ -5,8 +5,7 @@ void prim(viii &res, int s=0) {
   std::priority_queue<iii, viii, std::greater<iii>> pq;
   vis[s] = true;
   for (auto &[v, w] : adj[s])
-    if (!vis[v])
-      pq.push({w, {s, v}});
+    if (!vis[v]) pq.push({w, {s, v}});
   while (!pq.empty()) {
     auto edge = pq.top();    pq.pop();
     int u = edge.second.second;
@@ -14,7 +13,4 @@ void prim(viii &res, int s=0) {
     vis[u] = true;
     res.push_back(edge);
     for (auto &[v, w] : adj[u])
-      if (!vis[v])
-        pq.push({w, {u, v}});
-  }
-}
+      if (!vis[v]) pq.push({w, {u, v}});}}
