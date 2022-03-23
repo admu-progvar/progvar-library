@@ -81,7 +81,11 @@
 { \end{itemize}                  }
 
 % Title/Author
-\title{$KFC$}
+\ifdefined\team 
+  \title{\team{}}
+\else
+  \title{$KFC$}
+\fi
 \subtitle{AdMU Progvar}
 \date{\ddmmyyyydate{\today{}}}
 
