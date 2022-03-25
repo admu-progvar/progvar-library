@@ -81,8 +81,12 @@
 { \end{itemize}                  }
 
 % Title/Author
-\title{$KFC$}
-\subtitle{AdMU Progvar}
+\ifdefined\TEAMNAME 
+  \title{\TEAMNAME{}}
+\else
+  \title{Ateneo ProgVar}
+\fi
+\subtitle{AdMU ProgVar}
 \date{\ddmmyyyydate{\today{}}}
 
 % Output Verbosity
