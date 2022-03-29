@@ -1,9 +1,9 @@
 #ifndef PVL_GRAPHS_TREE_TREE_CENTERS_HPP_
 #define PVL_GRAPHS_TREE_TREE_CENTERS_HPP_ 1
 
-#include "base.hpp"
-#include "graphs/unweighted_graphs.hpp"
-#include "graphs/tree/tree_diameter.hpp"
+#include "./base.hpp"
+#include "./graphs/unweighted_graphs.hpp"
+#include "./graphs/tree/tree_diameter.hpp"
 
 
 namespace pvl {

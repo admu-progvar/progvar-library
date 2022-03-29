@@ -4,6 +4,7 @@
 #include "../pvl/math/constants.hpp"
 #include "../pvl/graphs/shortest_paths/dijkstra.hpp"
 
+
 int N = 5;
 
 
@@ -11,7 +12,7 @@ pvl::graph_dijkstra<int> build_graph() {
   /*
   +-(2)-->1-(1)-+
   |             |
-  |             v  
+  |             v
   0             2<--(4)--4
   |             ^
   |             |

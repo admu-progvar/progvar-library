@@ -1,8 +1,8 @@
 #ifndef PVL_GRAPHS_SHORTEST_PATHS_FLOYD_WARSHALL_HPP_
 #define PVL_GRAPHS_SHORTEST_PATHS_FLOYD_WARSHALL_HPP_ 1
 
-#include "math/algebra.hpp"
-#include "graphs/weighted_graphs.hpp"
+#include "./math/algebra.hpp"
+#include "./graphs/weighted_graphs.hpp"
 
 
 namespace pvl {

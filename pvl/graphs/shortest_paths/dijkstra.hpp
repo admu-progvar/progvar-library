@@ -5,8 +5,8 @@
 #include <vector>
 #include <queue>
 
-#include "math/algebra.hpp"
-#include "graphs/weighted_graphs.hpp"
+#include "./math/algebra.hpp"
+#include "./graphs/weighted_graphs.hpp"
 
 
 namespace pvl {

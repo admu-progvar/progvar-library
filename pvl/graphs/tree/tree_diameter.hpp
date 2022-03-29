@@ -1,9 +1,9 @@
 #ifndef PVL_GRAPHS_TREE_TREE_DIAMETER_HPP_
 #define PVL_GRAPHS_TREE_TREE_DIAMETER_HPP_ 1
 
-#include "base.hpp"
-#include "graphs/unweighted_graphs.hpp"
-#include "graphs/basic_traversal/bfs.hpp"
+#include "./base.hpp"
+#include "./graphs/unweighted_graphs.hpp"
+#include "./graphs/basic_traversal/bfs.hpp"
 
 
 namespace pvl {

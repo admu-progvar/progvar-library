@@ -11,7 +11,7 @@ pvl::graph_floyd_marshall<int> build_graph() {
   /*
   +-(2)-->1-(1)-+
   |             |
-  |             v  
+  |             v
   0             2<--(4)--4
   |             ^
   |             |

@@ -4,8 +4,8 @@
 #include <vector>
 #include <queue>
 
-#include "math/constants.hpp"
-#include "graphs/max_flow/dinic.hpp"
+#include "./math/constants.hpp"
+#include "./graphs/max_flow/dinic.hpp"
 
 typedef long long ll;
 

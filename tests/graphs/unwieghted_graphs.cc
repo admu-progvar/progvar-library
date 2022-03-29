@@ -69,7 +69,7 @@ TEST(UnweightedGraphs, EdgeListUndirected) {
   g.add_edge(2, 3);
 
   EXPECT_EQ(g.edges.size(), 3);
-  for (auto &[u, v]: g.edges)
+  for (auto &[u, v] : g.edges)
     EXPECT_LT(u, v);
 }
 
