@@ -31,5 +31,5 @@ repos:
     rev: 22.3.0
     hooks:
       - id: black
-        exclude: "notebook,docs,tests/build,pvl/abridged"
         language_version: python3
+        args: ["--exclude=docs|tests\/build"]

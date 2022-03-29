@@ -13,7 +13,7 @@ def granville(n, k, p, E):
     if prime_pow >= E:
         return 0
     e = E - prime_pow
-    pe = p ** e
+    pe = p**e
     r, f = n - k, [1] * pe
     for i in range(1, pe):
         x = i
@@ -31,7 +31,7 @@ def granville(n, k, p, E):
     ans = numer * modinv(denom, pe) % pe
     if negate and (p != 2 or e < 3):
         ans = (pe - ans) % pe
-    return mod(ans * p ** prime_pow, p ** E)
+    return mod(ans * p**prime_pow, p**E)
 
 
 def choose(n, k, m):  # generalized (n choose k) mod m
@@ -47,5 +47,5 @@ def choose(n, k, m):  # generalized (n choose k) mod m
     if x > 1:
         factors.append((x, 1))
     crt_array = [granville(n, k, p, e) for p, e in factors]
-    mod_array = [p ** e for p, e in factors]
+    mod_array = [p**e for p, e in factors]
     return chinese_remainder(crt_array, mod_array)[0]
