@@ -5,7 +5,7 @@ do
     esac
 done
 
-rm -f *.{aux,log,toc,fls,fdb_latexmk}
+rm -rf *.{aux,log,toc,fls,fdb_latexmk} _code/ _docs/
 python3 preprocess.py
 python3 build_tex.py
 
@@ -15,7 +15,4 @@ pdflatex -shell-escape -jobname="notebook-trunc" "\def\ICPCCONFIG{1} \def\TEAMNA
 pdflatex -shell-escape "\def\ICPCCONFIG{1} \def\TEAMNAME{$teamname} \input{notebook.tex}"
 pdflatex -shell-escape "\def\ICPCCONFIG{1} \def\TEAMNAME{$teamname} \input{notebook.tex}"
 
-rm -f *.{aux,log,toc,fls,fdb_latexmk}
-#rm -rf _code/
-#rm -rf _docs/
-rm -rf _minted-notebook*
+rm -rf *.{aux,log,toc,fls,fdb_latexmk} _minted-notebook*
