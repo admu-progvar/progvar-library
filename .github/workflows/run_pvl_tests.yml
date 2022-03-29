@@ -1,0 +1,15 @@
+name: pvl-tests
+
+on: pull_request
+
+jobs:
+  pre-commit:
+    name: Run PVL tests
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-python@v2
+    - name: Get latest CMake
+      uses: lukka/get-cmake@latest
+    - name: Run tests
+      run: ./run_tests.sh
