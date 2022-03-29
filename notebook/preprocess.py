@@ -22,15 +22,8 @@ def generate_codes_and_docs(code_directory="../pvl/abridged"):
                 )
                 print(fout_code, fout_docs)
 
-                try:
-                    os.makedirs(os.path.dirname(fout_code))
-                except Exception:
-                    pass
-
-                try:
-                    os.makedirs(os.path.dirname(fout_docs))
-                except Exception:
-                    pass
+                os.makedirs(os.path.dirname(fout_code), exist_ok=True)
+                os.makedirs(os.path.dirname(fout_docs), exist_ok=True)
 
                 dat = [line for line in open(p).read().splitlines()]
                 docs = []

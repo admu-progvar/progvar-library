@@ -9,12 +9,7 @@ for path, dirs, files in os.walk("./structure"):
         fout_tex = os.path.join("tex", ".".join(f.split(".")[:-1]) + ".tex")
         print(fout_tex)
 
-        try:
-            os.makedirs(os.path.dirname(fout_tex), exist_ok=True)
-            print("Created file", fout_tex)
-        except:
-            print("Couldn't create file", fout_tex)
-            pass
+        os.makedirs(os.path.dirname(fout_tex), exist_ok=True)
 
         dat = [line for line in open(p).read().splitlines()]
 
