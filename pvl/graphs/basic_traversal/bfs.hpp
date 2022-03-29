@@ -3,9 +3,9 @@
 
 #include <queue>
 
-#include "base.hpp"
-#include "math/constants.hpp"
-#include "graphs/unweighted_graphs.hpp"
+#include "./base.hpp"
+#include "./math/constants.hpp"
+#include "./graphs/unweighted_graphs.hpp"
 
 
 namespace pvl {

@@ -5,7 +5,7 @@
 #include <queue>
 #include <cassert>
 
-#include "math/constants.hpp"
+#include "./math/constants.hpp"
 
 typedef long long ll;
 

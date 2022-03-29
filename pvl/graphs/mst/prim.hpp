@@ -4,7 +4,8 @@
 #include <queue>
 #include <vector>
 #include <utility>
-#include "graphs/weighted_graphs.hpp"
+
+#include "./graphs/weighted_graphs.hpp"
 
 namespace pvl {
 

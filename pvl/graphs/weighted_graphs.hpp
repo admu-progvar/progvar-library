@@ -7,7 +7,7 @@
 #include <set>
 #include <map>
 
-#include "math/algebra.hpp"
+#include "./math/algebra.hpp"
 
 
 namespace pvl {
