@@ -24,11 +24,12 @@ repos:
         files: tests
         args: [
           "--exclude=tests/build",
-          "--filter=-legal/copyright,-readability/alt_tokens,-whitespace/parens,-build/include_what_you_use,-runtime/int,-build/include_order",
+          "--filter=-legal/copyright,-readability/alt_tokens,-whitespace/parens,-build/include_what_you_use,-runtime/int,-build/include_order,-runtime/threadsafe_fn",
           "--linelength=80"
         ]
   - repo: https://github.com/psf/black
     rev: 21.10b0
     hooks:
       - id: black
+        exclude: "notebook,docs,tests/build,pvl/abridged"
         language_version: python3
