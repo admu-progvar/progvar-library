@@ -48,3 +48,7 @@ gtest_discover_tests(Prim)
 add_executable(ZAlgo ./z.cc)
 target_link_libraries(ZAlgo gtest_main)
 gtest_discover_tests(ZAlgo)
+
+add_executable(PrimeSieve ./prime_sieve.cc)
+target_link_libraries(PrimeSieve gtest_main)
+gtest_discover_tests(PrimeSieve)
