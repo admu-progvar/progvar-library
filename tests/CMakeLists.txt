@@ -44,3 +44,7 @@ gtest_discover_tests(Tree)
 add_executable(Prim graphs/mst/prim.cc)
 target_link_libraries(Prim gtest_main)
 gtest_discover_tests(Prim)
+
+add_executable(ZAlgo ./z.cc)
+target_link_libraries(ZAlgo gtest_main)
+gtest_discover_tests(ZAlgo)
