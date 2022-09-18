@@ -12,4 +12,4 @@ jobs:
     - name: Get latest CMake
       uses: lukka/get-cmake@latest
     - name: Run tests
-      run: ./run_tests.sh
+      run: ./run.sh test
