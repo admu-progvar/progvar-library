@@ -8,8 +8,7 @@ if [[ $name == "init" ]]; then
     cat $SCRIPT_DIR/requirements.system.txt | xargs sudo apt install;
 elif [[ $name == "test" ]]; then
     cd $SCRIPT_DIR/tests
-    cmake -S $SCRIPT_DIR/tests -B $SCRIPT_DIR/tests/build
-    cmake -B $SCRIPT_DIR/tests/build
+    cmake -S $SCRIPT_DIR/tests -B $SCRIPT_DIR/tests/build && cmake --build $SCRIPT_DIR/tests/build
     cd $SCRIPT_DIR/tests/build
     ctest;
 elif [[ $name == "build-notebook" ]]; then
