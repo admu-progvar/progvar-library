@@ -1,4 +1,6 @@
 Data Structures
+- red|Dynamic Data Structures
+  - dynamic_data_struct.cpp
 - Fenwick Tree
   - fenwick.cpp
 - Leq Counter
