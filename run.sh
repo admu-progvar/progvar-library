@@ -13,7 +13,7 @@ elif [[ $name == "test" ]]; then
     ctest;
 elif [[ $name == "build-notebook" ]]; then
     cd $SCRIPT_DIR/notebook
-    bash build_notebook.sh;
+    bash build_notebook.sh ${@:2};
 else
     echo "Command $name not found" >&2
     exit 1
