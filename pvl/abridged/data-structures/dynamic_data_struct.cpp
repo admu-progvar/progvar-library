@@ -8,8 +8,6 @@ struct data_struct {
     void rollback(state &old_s) {
         /*...*/
         s = old_s; } };
-// alternative implementation:
-// https://paste.ubuntu.com/p/SJKG87qnT5/
 struct segtree {
     int l, r;
     std::vector<operation> operations;
