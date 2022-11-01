@@ -50,6 +50,10 @@
       Currently $O(N^2)$, but can be optimized to a randomized $O(N\log{N})$ using the Clarkson-Shor algorithm.
       Sauce: \href{https://codeforces.com/blog/entry/81768}{Efficient 3D Convex Hull Tutorial on CF}.
       \code{geom/convex-hull-3d.cpp}
+    \subsubsection{Line upper/lower envelope}
+      To find the upper/lower envelope of a collection of lines $a_i+b_i x$,
+      plot the points $(b_i,a_i)$, add the point $(0,\pm \infty)$ (depending
+      on if upper/lower envelope is desired), and then find the convex hull.
   \subsectionRed{Delaunay Triangulation}
     Simply map each point $(x,y)$ to $(x,y,x^2+y^2)$, find the 3d convex hull, and drop the 3rd dimension.
   \subsection{Point in Polygon}
@@ -81,10 +85,6 @@
     keeping a bounded rectangle. Modifiable for other metrics such as Minkowski and
     Manhattan distance. For external point queries, see $k$D Tree.
     \code{geom/closest-pair.cpp}
-  \subsection{Line upper/lower envelope}
-    To find the upper/lower envelope of a collection of lines $a_i+b_i x$,
-    plot the points $(b_i,a_i)$, add the point $(0,\pm \infty)$ (depending
-    on if upper/lower envelope is desired), and then find the convex hull.
   \subsection{Formulas}
     Let $a = (a_x, a_y)$ and $b = (b_x, b_y)$ be two-dimensional vectors.
     \begin{itemize}
