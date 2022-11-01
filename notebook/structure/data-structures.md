@@ -32,8 +32,7 @@ Data Structures
     - sparse.cpp
   - red|2D Sparse Table
     - sparse_2d.cpp
-- Splay Tree
-  - splay.cpp
+- black|Splay Tree
 - Treap
   - Implicit Treap
     - treap_implicit.cpp
