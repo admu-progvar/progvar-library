@@ -32,4 +32,4 @@ repos:
     hooks:
       - id: black
         language_version: python3
-        args: ["--exclude=docs|tests\/build"]
+        args: ["--exclude=docs|tests\/build|pvl\/abridged"]
