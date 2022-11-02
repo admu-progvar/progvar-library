@@ -40,8 +40,9 @@
 
 % Minted
 \newcommand{\code}[1]{\inputminted[fontsize=\normalsize,baselinestretch=1]{cpp}{_code/#1}}
+\newcommand{\pythoncode}[1]{\inputminted[fontsize=\normalsize,baselinestretch=1]{python}{_code/#1}}
 \newcommand{\bashcode}[1]{\inputminted{bash}{_code/#1}}
-\newcommand{\regcode}[1]{\inputminted{cpp}{code/#1}}
+\newcommand{\regcode}[1]{\inputminted{cpp}{_code/#1}}
 
 % Header/Footer
 % \geometry{includeheadfoot}
@@ -107,10 +108,8 @@
 
 % \clearpage
 
-\begin{comment}
-\section{Code Templates}
-	\code{base.cpp}
-\end{comment}
+% \section{Code Templates}
+% 	\code{base.cpp}
 
 \input{tex/data-structures}
 \input{tex/dp}
