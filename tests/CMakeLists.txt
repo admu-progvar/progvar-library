@@ -45,6 +45,10 @@ add_executable(Prim graphs/mst/prim.cc)
 target_link_libraries(Prim gtest_main)
 gtest_discover_tests(Prim)
 
+add_executable(CentroidDecomposition graphs/centroid_decomposition.cc)
+target_link_libraries(CentroidDecomposition gtest_main)
+gtest_discover_tests(CentroidDecomposition)
+
 add_executable(ZAlgo strings/z.cc)
 target_link_libraries(ZAlgo gtest_main)
 gtest_discover_tests(ZAlgo)
