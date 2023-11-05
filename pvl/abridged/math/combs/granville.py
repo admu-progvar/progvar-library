@@ -5,6 +5,8 @@ def fprime(n, p):
         ans += n // pk
         pk *= p
     return ans
+
+
 def granville(n, k, p, E):
     # n choose k (mod p^E)
     prime_pow = fprime(n, p) - fprime(k, p) - fprime(n - k, p)
@@ -30,6 +32,8 @@ def granville(n, k, p, E):
     if negate and (p != 2 or e < 3):
         ans = (pe - ans) % pe
     return mod(ans * p**prime_pow, p**E)
+
+
 def choose(n, k, m):  # generalized (n choose k) mod m
     factors, x, p = [], m, 2
     while p * p <= x:
