@@ -56,3 +56,7 @@ gtest_discover_tests(ZAlgo)
 add_executable(PrimeSieve math/numtheory/prime_sieve.cc)
 target_link_libraries(PrimeSieve gtest_main)
 gtest_discover_tests(PrimeSieve)
+
+add_executable(PersistentLazySegtree data-structures/segtree_persistent_lazy.cc)
+target_link_libraries(PersistentLazySegtree gtest_main)
+gtest_discover_tests(PersistentLazySegtree)
