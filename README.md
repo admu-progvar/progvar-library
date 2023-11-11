@@ -86,7 +86,7 @@ We use [Pre-commit](https://pre-commit.com/) to make sure the codes are properly
 5. Add tests if necessary. See [Testing](#tests) for more info.
 6. Add an abridged version of your codes to `/pvl/abridged`
 7. Document your codes in `notebook.tex`
-8. Run `./run.sh build-notebook.sh` to generate the notebook
+8. Run `./run.sh build-notebook` to generate the notebook
 9. Submit a pull request
 10. Tag someone to review your code
 11. Merge your PR only after receiving at least 1 approval from a reviewer

@@ -19,6 +19,7 @@
 \usepackage{datetime}
 \usepackage{enumitem}
 \usepackage{multicol}
+
 \usepackage{bookmark}
 \usepackage{color}
 \usepackage{xcolor}
@@ -67,14 +68,14 @@
 \DeclareRobustCommand{\stirling}{\genfrac\{\}{0pt}{}}
 
 \definecolor{piggypink}{HTML}{FBDAE2}
-\newcommand{\sectionRed}[1]{\section{\colorbox{piggypink}{\color{black}#1}}}
-\newcommand{\subsectionRed}[1]{\subsection{\colorbox{piggypink}{\color{black}#1}}}
-\newcommand{\subsubsectionRed}[1]{\subsubsection{\colorbox{piggypink}{\color{black}#1}}}
+\newcommand{\sectionRed}[1]{\section{\texorpdfstring{\colorbox{piggypink}{\color{black}#1}}{#1}}}
+\newcommand{\subsectionRed}[1]{\subsection{\texorpdfstring{\colorbox{piggypink}{\color{black}#1}}{#1}}}
+\newcommand{\subsubsectionRed}[1]{\subsubsection{\texorpdfstring{\colorbox{piggypink}{\color{black}#1}}{#1}}}
 
 \definecolor{gummetal}{HTML}{283845}
-\newcommand{\sectionBlack}[1]{\section{\colorbox{gummetal}{\color{white}#1}}}
-\newcommand{\subsectionBlack}[1]{\subsection{\colorbox{gummetal}{\color{white}#1}}}
-\newcommand{\subsubsectionBlack}[1]{\subsubsection{\colorbox{gummetal}{\color{white}#1}}}
+\newcommand{\sectionBlack}[1]{\section{\texorpdfstring{\colorbox{gummetal}{\color{white}#1}}{#1}}}
+\newcommand{\subsectionBlack}[1]{\subsection{\texorpdfstring{\colorbox{gummetal}{\color{white}#1}}{#1}}}
+\newcommand{\subsubsectionBlack}[1]{\subsubsection{\texorpdfstring{\colorbox{gummetal}{\color{white}#1}}{#1}}}
 
 \newenvironment{myitemize}
 { \begin{itemize}[leftmargin=.5cm]
