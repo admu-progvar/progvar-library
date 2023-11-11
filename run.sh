@@ -5,7 +5,7 @@ if [[ $name == "init" ]]; then
     pip3 install -r $SCRIPT_DIR/requirements.txt
     pip3 install -r $SCRIPT_DIR/requirements.devtools.txt
     pre-commit install
-    cat $SCRIPT_DIR/requirements.system.txt | xargs sudo apt install;
+    cat $SCRIPT_DIR/requirements.system.txt | xargs sudo apt install -y;
 elif [[ $name == "test" ]]; then
     cd $SCRIPT_DIR/tests
     cmake -S $SCRIPT_DIR/tests -B $SCRIPT_DIR/tests/build && cmake --build $SCRIPT_DIR/tests/build
