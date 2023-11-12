@@ -135,8 +135,9 @@ Simply run:
 ### Lead Maintainer
 
 - [Franz Louis Cesista](https://github.com/leloykun)
-  - World Finalist on the [International Collegiate Programming Contest](https://icpc.global/)
-  - Software Engineer @ [Expedock](https://www.expedock.com/)
+  - 2x World Finalist on the [International Collegiate Programming Contest](https://icpc.global/)
+  - 2x Wolrd Finalist on the [International Olympiad in Informatics](https://ioinformatics.org/)
+  - Machine Learning Research Engineer @ [Expedock](https://www.expedock.com/)
   - BS Mathematics @ Ateneo de Manila
 
 ### Contributors
